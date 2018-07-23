@@ -1,6 +1,6 @@
 # Chat Application
 
-## This project build using Node.js Express.js Sentry.io Redis Socket.io
+This project is build using Node.js Express.js Sentry.io Redis Socket.io
 
 ## How to install
 1. clone this repository `git clone https://github.com/nhunhea/chat-nodejs-sentry-redis-socketio.git`
