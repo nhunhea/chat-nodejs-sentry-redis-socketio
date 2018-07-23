@@ -58,6 +58,9 @@ var chatters = [];
 // Store messages in chatroom
 var chat_messages = [];
 
+// The error handler must be before any other error middleware
+app.use(Raven.errorHandler());
+
 // Express Middleware
 app.use(express.static("public"));
 app.use(
@@ -123,9 +126,6 @@ app.get("/get_messages", function(req, res) {
 app.get("/get_chatters", function(req, res) {
   res.send(chatters);
 });
-
-// The error handler must be before any other error middleware
-app.use(Raven.errorHandler());
 
 io.on("connection", function(socket) {
   // Fire 'send' event for updating Message list in UI
