@@ -1,5 +1,4 @@
 $(function() {
-  // test
   var socket = io();
   var chatter_count;
   $.get("/get_chatters", function(response) {

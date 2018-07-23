@@ -124,8 +124,9 @@ app.get("/get_chatters", function(req, res) {
   res.send(chatters);
 });
 
-// Socket Connection
-// UI Stuff
+// The error handler must be before any other error middleware
+app.use(Raven.errorHandler());
+
 io.on("connection", function(socket) {
   // Fire 'send' event for updating Message list in UI
   socket.on("message", function(data) {
@@ -138,19 +139,7 @@ io.on("connection", function(socket) {
   });
 });
 
-app.get("*", function mainHandler(req, res) {
-  //throw new Error('Broke!');
+app.get("*", function mainHandler (req, res) {
   Raven.captureException("Not Found");
   res.send("404 Not Found");
-});
-
-// The error handler must be before any other error middleware
-app.use(Raven.errorHandler());
-
-// Optional fallthrough error handler
-app.use(function onError(err, req, res, next) {
-  // The error id is attached to `res.sentry` to be returned
-  // and optionally displayed to the user for support.
-  res.statusCode = 500;
-  res.end(res.sentry + "\n");
 });

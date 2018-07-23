@@ -1,30 +1,30 @@
 .container {
-    width: 777px;
-    margin: 0 auto;
+  width: 777px;
+  margin: 0 auto;
 }
 
 .messages {
-    border: 1px solid rgb(155, 215, 229);
-    border-bottom: none;
-    width: 781px;
-    height: 240px;
+  border: 1px solid rgb(155, 215, 229);
+  border-bottom: none;
+  width: 781px;
+  height: 240px;
 }
 
 #message {
-    width: 100%;
-    background-color: #a5c8e6;
+  width: 100%;
+  background-color: #a5c8e6;
 }
 
 .chat {
-    display: none;
+  display: none;
 }
 
 .msg {
-    width: 100%;
+  width: 100%;
 }
 
 .user {
-    float: left;
-    margin-right: 10px;
-    font-weight: bold;
+  float: left;
+  margin-right: 10px;
+  font-weight: bold;
 }
