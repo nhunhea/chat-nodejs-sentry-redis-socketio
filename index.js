@@ -140,6 +140,6 @@ io.on("connection", function(socket) {
 });
 
 app.get("*", function mainHandler (req, res) {
-  Raven.captureException("Not Found");
-  res.send("404 Not Found");
+  Raven.captureException("Bad Gateway");
+  res.send("500 Bad Gateway");
 });
